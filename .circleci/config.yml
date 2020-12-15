@@ -45,9 +45,9 @@ jobs:
     steps:
       - run: return 1
       - run:
-        name: alert failure message
-        command: echo "This job failed"
-        when: on_fail
+          name: alert failure message
+          command: echo "This job failed"
+          when: on_fail
       
 workflows:
   # Name the workflow "welcome"
