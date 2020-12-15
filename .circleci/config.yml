@@ -23,7 +23,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run: echo "hello world" > output.txt       
+      - run: echo "hello world" > ~/output.txt       
       - persist_to_workspace:
           root: ~/
           paths:
