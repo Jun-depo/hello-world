@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Curl website smake test
           command: |
-            if curl -s --head "https://google.com" 
+            if curl -s --head "https://google55.com" 
             then 
               echo "It worked!" 
             else 
