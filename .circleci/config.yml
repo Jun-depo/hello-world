@@ -21,6 +21,16 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: echo $MyName
+  smoke_test:
+    docker:
+      - image: python:3.7-alpine3.11
+    steps:
+      - run: if curl -s --head "https://google.com" \
+             then \
+               echo "It worked!" \
+             else \
+               echo "It failed" \
+             fi
 workflows:
   # Name the workflow "welcome"
   welcome:
@@ -31,4 +41,5 @@ workflows:
       - print_world:
           requires:
             - print_hello
-      - print_name     
+      - print_name
+      - smoke_test
