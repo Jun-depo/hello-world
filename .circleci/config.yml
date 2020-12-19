@@ -26,6 +26,14 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - run:
+        name: update apt
+        command: |
+          apt update
+      - run:
+        name: Install curl
+        command: |
+          apt install curl
+      - run:
           name: Curl website smake test
           command: |
             if curl -s --head "https://google.com" 
