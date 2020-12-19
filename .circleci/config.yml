@@ -27,14 +27,6 @@ jobs:
     steps:
       - checkout
       - run:
-        name: update apt
-        command: |
-          apt update
-      - run:
-        name: Install curl
-        command: |
-          apt install curl
-      - run:
           name: Curl website smake test
           command: |
             if curl -s --head "https://google.com" 
